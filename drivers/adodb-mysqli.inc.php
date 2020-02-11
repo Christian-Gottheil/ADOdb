@@ -1062,6 +1062,7 @@ class ADORecordSet_mysqli extends ADORecordSet{
 			}
 		}
 
+		// fixes a problem where mysqli_result is set to null
 		if($this->_queryID instanceof mysqli_result && (!empty(implode('',(array)$this->_queryID)))) {
 			mysqli_free_result($this->_queryID);
 		}
